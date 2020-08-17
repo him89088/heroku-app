@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stroop.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid container-sm container-md container-lg container-xl heading2">
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="text-center text-sm-center text-md-center text-lg-center text-xl-center">{{ title }}</h2>
+            <p class='float text-center'>
+                User: {{user}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="dialogArea" class="container container-sm container-md container-lg container-xl">
+    <div class="row text-center">
+        <div class="col ">
+            <p class="dialog full">You will see a series of words.<br>
+                Select the colour the word is written in<br>
+                (not necessarily the word itself)<br>
+                by pressing:
+            </p>
+            <p id="key" class='dialog text-center full'>
+                &#8226 "r" for "red"<br>
+                &#8226 "g" for "green"<br>
+                &#8226 "b" for "blue"<br>
+                &#8226 "y" for "yellow"<br>
+            </p>
+            
+            <p class='dialog full'>You will get points for speed and accuracy.</p>
+            <button onclick="startGame()" class="btn btn-outline-primary">Start</button>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="centeredArea" class="container container-sm container-md container-lg container-xl">
+    <div class="row text-center">
+        <div class="col ">
+            <div id="stroop">
+                <p class="word"></p>
+                <div class='btn-keys' style="display: none;">
+                    <br>
+                    <br>
+                    <button class="btn btn-outline-primary" name='r' value='r'>Red</button>
+                    <button class="btn btn-outline-primary" name='g' value='g'>Green</button>
+                    <button class="btn btn-outline-primary" name='y' value='y'>Yellow</button>
+                    <button class="btn btn-outline-primary" name='b' value='b'>Blue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<form id="endStroop" method="POST" style="display: none;">
+    <div class="container container-sm container-md container-lg container-xl heading2 end">
+        <div class="row text-center ">
+            <div class="col">
+                <section>
+                    <p class="full block">
+                        Thank you! Click Next for the next game.
+                    </p>
+                </section>
+                <button value="submit" id="sub" onclick="con()" class="btn btn-outline-success"> Next </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/stroop.js') }}"></script>
+<!-- <div class="err" style="display: none;">
+    <br><br><br>
+    <p class="error footer">Click <a href="mailto:himanshu.vashisht2@mail.dcu.ie?Subject=App%20Error%20Reporting"
+            target="_top">here</a> to report an error</p>
+</div> -->
+{% endblock %}

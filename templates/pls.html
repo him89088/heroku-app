@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container-fluid container-sm container-md container-lg container-xl heading2">
+    <div class="row">
+        <div class="col">
+            <h2 class="text-center text-sm-center text-md-center text-lg-center text-xl-center">{{ title }}</h2>
+            <p class='float text-center'>
+                User: {{user}}
+            </p>
+        </div>
+    </div>
+</div>
+
+<form method="POST">
+    <div class="container container-sm container-md container-lg container-xl heading2 end">
+        <div class="row text-center ">
+            <div class="col">
+                <section class="text-justify block">
+                    <p class="full block">
+                        <!-- <h4>Introduction to the Research Study: </h4><br> -->
+                        <b>Who is conducting this research?</b> <br>
+                            This postgraduate dissertation research project is being
+                            conducted by Himanshu Vashisht & Alekhya
+                            Nethra, under the supervision of Prof. Tomas Ward, School of Computing, DCU, and Lili Zhang, School of Computing, DCU,
+                            in collaboration with Dr. Brian Slattery, School of Psychology, DCU.<br><br>
+                        <b>Title of the research</b> <br>Modelling the Effects of Chronic Pain on Human Decision Making by using a Reinforcement Learning
+                        Model <br><br>
+                        <b>What is the research about?</b> <br>This research will use a web application, where participants living with chronic pain 
+                        will complete a series of computer games that involve decision making responses. <br><br>
+                        <b>What is the aim of the research?</b><br> People make decisions all the time. Living with chronic pain 
+                        or experiencing pain can impact how we make those decisions. For example, depending on your pain level, your decision-making
+                        ability might be affected, even to the point of not being able to make a decision. This research aims to
+                        investigate the patterns in decision making for people living with chronic pain.  <br><br>
+
+                        <b>What will happen if I decide to participate in this research study?</b> 
+                        <ol>
+                            <li>
+                                If you are interested in participating in the study, you will be provided with a unique user ID
+                                and a link to the study (which can be accessed via your computer or mobile phone), and you
+                                will be asked to read and complete a Consent Form to indicate that you understand what your
+                                participation involves.
+                            </li>
+                            <li>
+                                After completing the Consent Form, you will be asked a few questions about your age,
+                                gender, and experience of pain.
+                            </li>
+                            <li>
+                                Then you will complete a series of short computer games that investigate decision making.
+                            </li>
+                            <li>
+                                The study will take no longer than 30 minutes.
+                            </li>
+                        </ol><br>
+                        <b>What happens if I change my mind?</b> <br>Participation in this study is entirely voluntary. You can withdraw your participation from the study for
+                        any reason, without penalty, at any point before the submission of your data.<br><br>
+
+                        <b>How will my privacy be protected?</b><br> Due to the anonymity of the study and the fact that the computer games are completed anonymously,
+                        no identifying personal information will be collected. So your privacy and confidentiality will be
+                        maintained at all times.<br>
+                        We <b>do not</b> ask for your:
+                        <ul>
+                            <li>Name</li>
+                            <li>E-Mail</li>
+                            <li>Phone Number</li>
+                        </ul>
+                        We <b>do</b> ask for your:
+                        <ul>
+                            <li>Gender</li>
+                            <li>Age</li>
+                            <li>Duration of you experiencing pain</li>
+                            <li>Brief history of pain levels and pain interfering with day-to-day life (on a scale of 0-10, 0 being lowest and 10 being
+                                highest)</li>
+                        </ul><br>
+
+                        <b>How will the data be used and subsequently disposed of?</b> <br>
+                        Your name will not be included at any stage of this research. All data gathered will be analysed using
+                        a Bayesian reinforcement learning model on a password protected computer belonging to the student
+                        researchers. Data will only be accessible to the student researchers, research supervisors, and, upon
+                        request, data may also be accessed by an external examiner. If the study is not published, the data
+                        will be held for one year after the completion of the thesis. If the study is published, the
+                        data will be held for five years after the completion of the thesis. After this time, all data will
+                        be shredded and/or be disposed of by the research supervisor.<br><br>
+
+                        <b>What are the legal limitations to data confidentiality?</b> <br>
+                            Confidentiality of information can only be provided within the limits of the law. Data can be subject to freedom of information request and statute in relation to GDPR. However, given the
+                            nature of the study, and that you have anonymity, such requests are not anticipated.<br><br>
+
+                        <b>What are the benefits of participating in the study?</b> <br>
+                        While there are no direct benefits to participants from this research, it is envisaged that some
+                        participants may enjoy participating in research, exploring a novel method of recording their pain
+                        experiences and indeed their indirect contribution to our scientific understanding of chronic pain, how
+                        pain can be managed and even reduced.<br><br>
+
+                        <b>What are the risks of participating in the study?</b> <br>
+                        Given the nature of the research project and the data collection methods employed, the risk level of
+                        this study is considered to be very low. In the unlikely event that you may experience some discomfort
+                        or stress while reporting pain-related experiences, pain interference levels, and social support, please
+                        contact your GP or Samaritans Ireland (01 872 7700, jo@samaritans.ie), regardless of whether you
+                        submitted any data. <span  style="color:#3399ff">If you are a DCU student, the student counselling services 
+                            (01 7005165, counselling@dcu.ie) are also available.</span> Also, please remember, that you can withdraw from the study
+                        at any point prior to the submission of your data.<br><br>
+                        
+                        <b>How will participants find out what happens with the project?</b> <br>
+                        As this study is part of the student researcher’s MSc dissertation, individual feedback will not be
+                        provided to participants. However, participants can email the student researcher from the contacts below and
+                        request a summary of the research findings.<br><br>
+
+                        <b>Contact details for further information</b> <br>
+                        If you have any concerns or queries as regards this research, please contact:
+                        <li><b>Student Researcher:</b> Himanshu Vashisht (himanshu.vashisht2@mail.dcu.ie), Alekhya Nethra (alekhya.nethra2@mail.dcu.ie)</li>
+                        <li><b>Research Supervisor:</b> Prof Tomas Ward (tomas.ward@dcu.ie), Lili Zhang (lili.zhang27@mail.dcu.ie)</li>
+                        <li><b>School of Computing Ethics Committee:</b> Renaat Verbruggen (renaat.verbruggen@dcu.ie)</li>
+                        <br><br>
+
+    
+                        <b><i>If participants have concerns about this study and wish to contact an independent person,
+                                please contact:</i></b>
+                        <i>The Secretary, Dublin City University Research Ethics Committee, c/o Research and Innovation
+                            Support, Dublin City University, Dublin 9. Tel 01-7008000, e-mail <b>rec@dcu.ie</b></i><br>
+                    </p>
+
+                </section>
+                <button type="submit" onclick="redirectToInfo()" class="btn btn-outline-primary"> Continue </button>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" src="{{ url_for('static', filename='js/pls.js') }}"></script>
+{% endblock %}

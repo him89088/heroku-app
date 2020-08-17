@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/igt.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid container-sm container-md container-lg container-xl heading2">
+	<div class="row">
+		<div class="col">
+			<h2 class="text-center text-sm-center text-md-center text-lg-center text-xl-center">{{ title }}</h2>
+			<p class='float text-center'>
+				User: {{user}}
+			</p>
+			<br>
+            <br>
+            <br>
+            <p class='float text-center card-inst' style="display: none;">
+                Please click on a card to make your choice:
+            </p>
+		</div>
+	</div>
+</div>
+
+<div id="info" class="container container-sm container-md container-lg container-xl">
+	<div class="row text-center ">
+		<div class="col ">
+			<!-- <h4 class="modal-title">Welcome to IGT <span id="game_version"></span></h4> -->
+			<section class="text-center block">
+				<ol class="text-center" style="list-style-position: inside;">
+					<li>In front of you on the screen, there are 4 decks of cards: A, B, C, and D.</li>
+					<li>When we begin the game, please select one card at a time by clicking on a card from any deck of
+						your choice.</li>
+					<li>Each time you select a card, the computer will tell you that you won some money. Every time you
+						win, the bar gets bigger.</li>
+					<li>Every so often, when you click on a card, the computer will tell you you lost some money as
+						well. Every time you lose, the bar gets smaller.</li>
+					<li>The goal of the game is to win as much money as possible and avoid losing as much money as
+						possible.</li>
+					<li>You will have €2000 of credit to start the game. </li>
+					<li>Good luck! </li>
+				</ol>
+			</section>
+			<br>
+            <br>
+
+				<section class="block text-center">
+					<p class=" full">
+						Click here to begin.
+					</p>
+				<button type="button" class="btn btn-outline-primary" onclick="game()">Start</button>
+
+		</div>
+	</div>
+</div>
+
+<main id="game" class="container container-sm container-md container-lg container-xl" style="display: none;">
+	<section class="row text-center">
+		<div class="col-3">
+			<figure>
+				<a id="card-one" href="#" class="card">
+					<img class="img-responsive" alt="card back 1" id='imgA' src="static/img/blue-back.png" />
+				</a>
+				<figcaption>
+					Deck A <span id="deck-one-clicks"></span>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="col-3">
+			<figure>
+				<a id="card-two" href="#" class="card">
+					<img class="img-responsive" alt="card back 1" id='imgB' src="static/img/blue-back.png" />
+				</a>
+				<figcaption>
+					Deck B <span id="deck-two-clicks"></span>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="col-3">
+			<figure>
+				<a id="card-three" href="#" class="card">
+					<img class="img-responsive" alt="card back 1" id='imgC' src="static/img/blue-back.png" />
+				</a>
+				<figcaption>
+					Deck C <span id="deck-three-clicks"></span>
+				</figcaption>
+			</figure>
+		</div>
+		<div class="col-3">
+			<figure>
+				<a id="card-four" href="#" class="card">
+					<img class="img-responsive" alt="card back 1" id='imgD' src="static/img/blue-back.png" />
+				</a>
+				<figcaption>
+					Deck D <span id="deck-four-clicks"></span>
+				</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<section class="row full">
+		<div class="progress">
+			<div id="cashpilebar" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="2000"
+				aria-valuemin="0" aria-valuemax="6000" style="width: 33%">
+				<span id="cashpileamt">€2000</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="row">
+		<div id="gamelog">
+			<p class="outputtext">You won: <span id="winamt"></span></p>
+			<p class="outputtext">You lost: <span id="penaltyamt"></span></p>
+			<p class="outputtext">Net +/-: <span id="netgains"></span></p>
+			<p class="outputtext">Total €: <span id="totalmoney"></span></p>
+		</div>
+	</section>
+</main>
+<form id="endigt" method="POST" style="display: none;">
+	<div class="container container-sm container-md container-lg container-xl heading2 end">
+		<div class="row text-center ">
+			<div class="col">
+				<section>
+					<p class="full block">
+						Thank you! Click Finish.
+					</p>
+				</section>
+				<button value="submit" id="sub" onclick="sendIGT()" class="btn btn-outline-success"> Finish </button>
+			</div>
+		</div>
+	</div>
+</form>
+<script type="text/javascript" src="{{ url_for('static', filename='js/igt.js') }}"></script>
+<!-- <div class="err" style="display: none;">
+	<br><br><br>
+	<p class="error footer">Click <a href="mailto:himanshu.vashisht2@mail.dcu.ie?Subject=App%20Error%20Reporting"
+			target="_top">here</a> to report an error</p>
+</div> -->
+{% endblock %}

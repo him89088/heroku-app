@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/prl.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid container-sm container-md container-lg container-xl heading2">
+    <div class="row text-center">
+        <div class="col">
+            <h2 class="text-center text-sm-center text-md-center text-lg-center text-xl-center">{{ title }}</h2>
+            <p class='float text-center'>
+                User: {{user}}
+            </p>
+            <br>
+            <br>
+            <br>
+            <p class='float text-center card-inst-prl' style="display: none;">
+                Please click on a card to make your choice:
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<div id="dialogArea" class="container container-sm container-md container-lg container-xl">
+    <div class="row text-center">
+        <div class="col ">
+            <section class="text-center block">
+            <ol class="text-center" style="list-style-position: inside;">
+                <li>On the screen you can see two cards: one yellow, one blue.</li>
+                <li>On each trial, you have to choose one of these two colors and the computer will tell you 
+                    whether your choice is correct or wrong.</li>
+                <li>Each color will sometimes be correct and sometimes wrong, 
+                    but one of the colors will tend to be correct more often than the other one.</li>
+                <li>Find out which color is usually correct and choose that color every time. 
+                    Stick with it, even if it is occasionally wrong.</li>
+                <li>At some point it may change so that the other color is usually correct, 
+                    in which case you should choose that one every time.</li>
+                <li>The goal is to get as many correct cards as possible.</li>
+                <li>Good luck! </li>
+            </ol>
+            </section>
+
+            <br>
+            <br>
+            <section class="block text-center">
+                <p class=" full">
+                    Click here to begin.
+                </p>
+            <button onclick="startGame()" class="btn btn-outline-primary">Start</button>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="centeredArea" class="container container-sm container-md container-lg container-xl">
+    <div class="row text-center">
+        <div class="col ">
+            <div id="prl">
+                <div class="row">
+                    <div class="col cards" style="display: none;">
+                        <span class="word1">
+                            <img  id="Card1" alt="yellow card" />
+                        </span>
+                        <!-- <div class='btn-keys' style="display: none;">
+                            <br>
+                            <br>
+                            <button class="btn btn-outline-primary" name='l' value='l'>Left</button>
+                        </div> -->
+                    </div>
+                    <div class='col resultdiv'  style="display: none;">
+                        <div class='result' ><br><p class='resText' ></p></div>
+                    </div>
+                    <div class="col cards" style="display: none;">
+                        <span class="word2">
+                            <img  id="Card2" alt="blue card" />
+                        </span>
+                        <!-- <div class='btn-keys' style="display: none;">
+                            <br>
+                            <br>
+                            <button class="btn btn-outline-primary" name='r' value='r'>Right</button>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<form id="endStroop" method="POST" style="display: none;">
+    <div class="container container-sm container-md container-lg container-xl heading2 end">
+        <div class="row text-center ">
+            <div class="col">
+                <section>
+                    <p class="full block">
+                        Thank you! Click Next for the next game.
+                    </p>
+                </section>
+                <button value="submit" id="sub" onclick="con()" class="btn btn-outline-success"> Next </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/prl.js') }}"></script>
+<!-- <div class="err" style="display: none;">
+    <br><br><br>
+    <p class="error footer">Click <a href="mailto:himanshu.vashisht2@mail.dcu.ie?Subject=App%20Error%20Reporting"
+            target="_top">here</a> to report an error</p>
+</div> -->
+{% endblock %}
